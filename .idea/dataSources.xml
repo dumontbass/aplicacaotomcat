@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="734784960">
-    <data-source source="LOCAL" name="src:main:webapp:WEB-INF:hibernate.cfg.xml" uuid="befdc2eb-8c87-4b3f-b734-a3491e6a43fc">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="src:main:webapp:WEB-INF:hibernate.cfg.xml" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="befdc2eb-8c87-4b3f-b734-a3491e6a43fc">
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost/test</jdbc-url>
       <user-name>root</user-name>
-      <libraries>
-        <library>
-          <url>file://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar</url>
-        </library>
-      </libraries>
+      <libraries />
     </data-source>
   </component>
 </project>
