@@ -1,6 +1,6 @@
 package br.org.teste;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -11,9 +11,18 @@ import java.util.Date;
 @Entity
 public class Aluno {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
+
+    @Column(name="NomeAluno")
     private String nome;
+
+    @Column(name="DataNascimento")
     private Date dataNascimento;
+
+    @Column(name="SituacaoAluno")
     private boolean situacaoAluno;
 
     public int getId() {

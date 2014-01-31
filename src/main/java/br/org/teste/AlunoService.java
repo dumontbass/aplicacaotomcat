@@ -18,16 +18,71 @@
 */
 package br.org.teste;
 
-import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.Collection;
 
 @Named
 @ApplicationScoped
 public class AlunoService
 {
-    public String createGreeting(String name)
-    {
-        return "Hello " + name + ". We hope you enjoy Apache MyFaces!";
+
+    private EntityManager em;
+
+
+    @PersistenceContext
+    public void setEntityManager(EntityManager em) {
+        this.em = em;
     }
+
+
+    /**
+     * Create aluno
+     * @param aluno
+     * @return
+     */
+    public String createAluno(Aluno aluno)
+    {
+
+        em.persist(aluno);
+
+        return "Aluno " + aluno.getNome() + ". cadastrado!";
+    }
+
+    /**
+     * Retrieve aluno
+     * @return
+     */
+    public Collection<Aluno> findAllAluno(){
+
+        Query query = em.createQuery("SELECT e FROM aluno e");
+        return (Collection<Aluno>) query.getResultList();
+    }
+
+
+    /**
+     * Retrieve one aluno
+     * @param id
+     * @return
+     */
+    public Aluno findAluno(int id) {
+        return em.find(Aluno.class, id);
+    }
+
+
+    /**
+     * Remove aluno
+     * @param id
+     */
+    public void removeAluno(int id) {
+        Aluno aluno = findAluno(id);
+        if (aluno != null) {
+            em.remove(aluno);
+        }
+    }
+
 
 }

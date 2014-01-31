@@ -26,9 +26,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * A typical simple backing bean, that is backed to <code>helloWorld.xhtml</code>
+ * A typical simple backing bean, that is backed to <code>aluno.xhtml</code>
  */
-@Named("alunoView")
+@Named("aluno")
 @WindowScoped
 public class AlunoController implements Serializable
 {
@@ -52,12 +52,22 @@ public class AlunoController implements Serializable
     public String send()
     {
         //do real logic, return a string which will be used for the navigation system of JSF
+
+
+
         return "page2.xhtml";
     }
 
     public String getGreeting()
     {
-        return alunoService.createGreeting(nome);
+        Aluno aluno = new Aluno();
+        aluno.setNome(nome);
+        aluno.setDataNascimento(dataNascimento);
+        aluno.setSituacaoAluno(true);
+
+        alunoService.createAluno(aluno);
+
+        return alunoService.createAluno(new Aluno());
     }
 
     //-------------------getter & setter

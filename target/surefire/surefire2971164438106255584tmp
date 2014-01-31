@@ -1,6 +1,0 @@
-#surefire
-#Thu Jan 30 21:16:25 BRST 2014
-container=tomcat7
-user.dir=/home/guilherme/projects/aplicacaotomcat
-localRepository=/home/guilherme/.m2/repository
-basedir=/home/guilherme/projects/aplicacaotomcat
